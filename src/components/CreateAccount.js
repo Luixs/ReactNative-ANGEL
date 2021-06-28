@@ -2,16 +2,16 @@ import React from "react";
 
 import { View, Text, StyleSheet, Button, Alert } from "react-native";
 
-const PerfilScreen = ({ navigation }) =>{
+const CreateAccount = ({ navigation }) =>{
     return(
         <View>
-            <Text> Pefil Pessoal</Text>
+            <Text> Criar Perfil</Text>
             <Button
                 title="Pressionar"
-                onPress= {()=> navigation.toggleDrawer()}
+                onPress= {()=> Alert.alert("Seu perfil","Montar")}
             />
         </View>
     );
 }
 
-export default PerfilScreen;
+export default CreateAccount;

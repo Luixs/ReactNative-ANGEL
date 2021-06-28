@@ -5,13 +5,9 @@ import { View, Text, StyleSheet, Button, Alert } from "react-native";
 const SearchScreen = ({ navigation }) =>{
     return(
         <View>
-            <Text> Bem vindo Usuário</Text>
+            <Text> Search Screen</Text>
             <Button
-                title="Perfil"
-                onPress= {()=> navigation.push('Perfil')}
-            />
-            <Button
-                title="Navegar"
+                title="Pressionar"
                 onPress= {()=> navigation.toggleDrawer()}
             />
         </View>
