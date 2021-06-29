@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 //--------------------------SCREENS------------------------------
-import Login from './Login';
+import LoginScreen from './Login';
 import Welcome from './Welcome';
 import CreateAccount from './CreateAccount';
 import MainScreen from './Main';
@@ -23,10 +23,40 @@ const MainStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
 //-----------------CREATE A SCREEN-----------------------------
+//--------------------ROOTSTACK----------------------------------
+const RootStack = createStackNavigator();
+const RootStackScreen = ( {userToken} )=>(
+  <RootStack.Navigator headerMode="none">
+    {userToken ? (
+      <RootStack.Screen name="App" component={DrawerScreen}/>
+    ) :(
+      <RootStack.Screen name="Auth" component={AuthScreen}/>
+    )}   
+  </RootStack.Navigator>
+)
+//------------------MAIN STACKS AND DRAWER-----------------------
+const DrawerScreen = ()=>(
+  <Drawer.Navigator>
+    <Drawer.Screen name="Home" component={Tabs}/> 
+    <Drawer.Screen name="Perfil" component={PerfilStackScreen}/> 
+  </Drawer.Navigator>
+)
+const AuthScreen = ()=>(
+  <AuthStack.Navigator>
+    <AuthStack.Screen name= "Main" component={MainStackScreen} options={{
+      headerShown: false
+    }}/>
+    <AuthStack.Screen name= "Login" component={LoginScreen}/>
+    <AuthStack.Screen name= "CreateAccount" component={CreateAccount} options={{
+      title: "Create Account"
+    }}/>
+  </AuthStack.Navigator>  
+)
+//---------------------------------------------------------------
 const HomeStackScreen = () =>(
   <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={Welcome}/>
-    <HomeStack.Screen name="Perfil" component={PerfilScreen}/>
+    <HomeStack.Screen name="Perfil" component={PerfilScreen} />
   </HomeStack.Navigator>
 )
 
@@ -72,7 +102,7 @@ export default ()=>{
         setIsLoading(false);
         setUserToken('abc');
       },
-      singOut:()=> {
+      signOut:()=> {
         setIsLoading(false);
         setUserToken(null);
       }
@@ -90,24 +120,9 @@ export default ()=>{
   }
   
   return (
-  <AuthContext.Provider value={AuthContext}>
-  <NavigationContainer>
-    {userToken ? (
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Tabs}/> 
-        <Drawer.Screen name="Perfil" component={PerfilStackScreen}/> 
-      </Drawer.Navigator>
-    ): (
-        <AuthStack.Navigator>
-        <AuthStack.Screen name= "Main" component={MainStackScreen} options={{
-          headerShown: false
-        }}/>
-        <AuthStack.Screen name= "Login"  component={Login}/>
-        <AuthStack.Screen name= "CreateAccount"  component={CreateAccount} options={{
-          title: "Create Account"
-        }}/>
-        </AuthStack.Navigator>
-      )}
-  </NavigationContainer>
+  <AuthContext.Provider value={authContext}>
+    <NavigationContainer>
+      <RootStackScreen userToken={userToken}/>
+    </NavigationContainer>
   </AuthContext.Provider>
 )}
