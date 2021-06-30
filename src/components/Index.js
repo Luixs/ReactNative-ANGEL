@@ -22,7 +22,9 @@ const PerfilStack = createStackNavigator();
 const MainStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
-//-----------------CREATE A SCREEN-----------------------------
+//-----------------IMPORT DESIGNS -----------------------------
+import styles from '../styles/Main';
+import { color } from 'react-native-reanimated';
 //--------------------ROOTSTACK----------------------------------
 const RootStack = createStackNavigator();
 const RootStackScreen = ( {userToken} )=>(
@@ -42,11 +44,19 @@ const DrawerScreen = ()=>(
   </Drawer.Navigator>
 )
 const AuthScreen = ()=>(
-  <AuthStack.Navigator>
-    <AuthStack.Screen name= "Main" component={MainStackScreen} options={{
+  <AuthStack.Navigator screenOptions={{headerTitleAlign:'center'}}>
+    <AuthStack.Screen name= "Main" component={MainScreen} options={{
       headerShown: false
     }}/>
-    <AuthStack.Screen name= "Login" component={LoginScreen}/>
+    <AuthStack.Screen name= "Login" component={LoginScreen} options={{
+      headerTitleStyle:{
+        color: "#fff"
+      },
+      headerStyle:{
+        backgroundColor: "#be2534"
+      },
+      title: "WELCOME"
+    }}/>
     <AuthStack.Screen name= "CreateAccount" component={CreateAccount} options={{
       title: "Create Account"
     }}/>
@@ -58,12 +68,6 @@ const HomeStackScreen = () =>(
     <HomeStack.Screen name="Home" component={Welcome}/>
     <HomeStack.Screen name="Perfil" component={PerfilScreen} />
   </HomeStack.Navigator>
-)
-
-const MainStackScreen = () =>(
-  <MainStack.Navigator>
-    <MainStack.Screen name="Main" component={MainScreen}/>
-  </MainStack.Navigator>
 )
 
 const SearchStackScreen = () =>(
@@ -112,7 +116,7 @@ export default ()=>{
   React.useEffect(()=>{
     setTimeout(()=>{
       setIsLoading(false);
-    },100)
+    },500)
   },[])
 
   if (isLoading) {

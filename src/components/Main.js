@@ -1,13 +1,21 @@
 import React from "react";
+import { View, Text, StyleSheet, Button, Alert, Image, TouchableOpacity } from "react-native";
 
-import { View, Text, StyleSheet, Button, Alert } from "react-native";
+//-----------------------
+import styles from "../styles/Main";
+
 
 const MainScreen = ({ navigation }) =>{
     return(
-        <View>
-            <Text>Sign In</Text>
-            <Button title="Sign In" onPress={()=> navigation.push('Login')}/>
-            <Button title="CreateAccout" onPress={()=> navigation.push('CreateAccount')}/>
+        <View style={styles.container}>
+            <Text style={styles.text}>ANGEL</Text>
+            <Image
+                source={require('../assets/logo2.png')}
+                style={ styles.logo }
+            />
+            <TouchableOpacity style={styles.botao} onPress={()=> navigation.push('Login')}>
+                <Text style={styles.textButton}>Entre agora</Text>
+            </TouchableOpacity>            
         </View>
     );
 }

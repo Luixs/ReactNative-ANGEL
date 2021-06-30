@@ -1,37 +1,36 @@
 import {StyleSheet} from 'react-native';
 
 const StyleLogin = StyleSheet.create({
-    logo:{
-        height:130,
-        width:130
+    text: {
+        fontWeight:"bold",
+        fontSize:50,
+        color:"#be2534"
     },
-    input:{
-        marginTop:10,
-        width:300,
-        backgroundColor: 'white',
-        borderRadius:6,
-        padding:10
+    inputMail:{
+        width:'80%',
+        paddingLeft:20,
+        marginBottom:15,
+        height:50,
+        borderRadius: 25,
+        backgroundColor: '#2c405b',
     },
-    botao:{
-        alignItems: "center",
-        backgroundColor: "white",
-        padding: 10,
-        marginTop: 10,
-        borderRadius:6,
-        width:300,
+    forgot:{
+        color:"#fff",
+        fontSize:12
     },
-    textoBotao: {
-        color: 'black',
-        fontSize: 16
+    btnSignIn:{
+        width:"80%",
+        backgroundColor:"#be2534",
+        borderRadius:25,
+        height:50,
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:40,
+        marginBottom:10
     },
-    forgetPass:{
-        textAlign:'right',
-        color: 'white',
-        alignSelf: 'flex-end',
-        marginTop:5,
-        marginRight:45
+    createAcc:{
+        color: '#fff'
     }
-
 })
 
 

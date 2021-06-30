@@ -1,25 +1,34 @@
 import React from "react";
 
-import { View, Text, StyleSheet, Button, Alert, TextInput } from "react-native";
+import { View, Text, StyleSheet, Button, Alert, TextInput, TouchableOpacity } from "react-native";
 import { AuthContext } from "../App/Context";
+import styles from "../styles/Main";
+import StyleLogin from "../styles/StyleLogin";
+
+
 const LoginScreen = ({ navigation }) =>{
     const {signIn} = React.useContext(AuthContext);
     return(
-        <View>
+        <View style={styles.container}>
+            <Text style={StyleLogin.text}>ANGEL</Text>
             <TextInput
-                placeholder="Digite seu usuário"
-                //style={StyleLogin.input}
+                placeholder="Email..."
+                placeholderTextColor="#fff"
+                style={StyleLogin.inputMail}
             />
             <TextInput
-                placeholder="Digite sua senha"
+                placeholder="Password..."
+                placeholderTextColor="#fff"
                 secureTextEntry={true}
-                //style={StyleLogin.input}
+                style={StyleLogin.inputMail}
             />
-            <Text> AREA DE LOGIN </Text>
-            <Button
-                title="Entrar"
-                onPress= {()=> signIn()}
-            />
+            <Text style={StyleLogin.forgot}> Forgot Password? </Text>
+            <TouchableOpacity style={StyleLogin.btnSignIn} onPress={()=> signIn()}>
+                <Text style={StyleLogin.createAcc}>ENTRAR</Text>
+            </TouchableOpacity>
+            <TouchableOpacity  onPress={()=> navigation.push('CreateAccount')}>
+                <Text style={StyleLogin.createAcc} >Criar Conta</Text>
+            </TouchableOpacity>
         </View>
     );
 }
