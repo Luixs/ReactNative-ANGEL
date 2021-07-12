@@ -2,10 +2,10 @@ import React from "react";
 
 import { View, Text,Button } from "react-native";
 
-const SearchScreen = ({ navigation }) =>{
+const HomeScreen = ({ navigation }) =>{
     return(
         <View>
-            <Text> Bem vindo Usuário</Text>
+            <Text> Bem vindo</Text>
             <Button
                 title="Perfil"
                 onPress= {()=> navigation.push('Perfil')}
@@ -18,4 +18,4 @@ const SearchScreen = ({ navigation }) =>{
     );
 }
 
-export default SearchScreen;
+export default HomeScreen;
