@@ -5,13 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 //--------------------------SCREENS------------------------------
-import LoginScreen from './Login';
-import Welcome from './Welcome';
-import CreateAccount from './CreateAccount';
-import MainScreen from './Main';
-import PerfilScreen from './Perfil';
-import SearchScreen from './Search';
-import SplashScreen from './Splash';
+import LoginScreen from '../Pages/Login/Login.js';
+import Home from '../Pages/HomeInside/Home';
+import CreateAccount from '../Pages/Login/CreateAccount';
+import MainScreen from '../Pages/Initial/Main';
+import PerfilScreen from '../Pages/HomeInside/Perfil';
+import SearchScreen from '../Pages/HomeInside/Search';
+import SplashScreen from '../Pages/Initial/Splash';
 //---------------------------------------------------------------
 import { AuthContext } from '../App/Context';
 //---------------------------------------------------------------
@@ -65,7 +65,7 @@ const AuthScreen = ()=>(
 //---------------------------------------------------------------
 const HomeStackScreen = () =>(
   <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Welcome}/>
+    <HomeStack.Screen name="Home" component={Home}/>
     <HomeStack.Screen name="Perfil" component={PerfilScreen} />
   </HomeStack.Navigator>
 )

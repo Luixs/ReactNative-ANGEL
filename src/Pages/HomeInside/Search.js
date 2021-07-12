@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Text, StyleSheet, Button, Alert } from "react-native";
+import { View, Text, Button } from "react-native";
 
 const SearchScreen = ({ navigation }) =>{
     return(

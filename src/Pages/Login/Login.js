@@ -1,9 +1,9 @@
 import React from "react";
 
-import { View, Text, StyleSheet, Button, Alert, TextInput, TouchableOpacity } from "react-native";
-import { AuthContext } from "../App/Context";
-import styles from "../styles/Main";
-import StyleLogin from "../styles/StyleLogin";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { AuthContext } from "../../App/Context";
+import styles from "../../styles/Main";
+import StyleLogin from "../../styles/StyleLogin.js";
 
 
 const LoginScreen = ({ navigation }) =>{
@@ -29,6 +29,7 @@ const LoginScreen = ({ navigation }) =>{
             <TouchableOpacity  onPress={()=> navigation.push('CreateAccount')}>
                 <Text style={StyleLogin.createAcc} >Criar Conta</Text>
             </TouchableOpacity>
+            
         </View>
     );
 }

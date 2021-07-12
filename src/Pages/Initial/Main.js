@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, Alert, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
 //-----------------------
-import styles from "../styles/Main";
+import styles from "../../styles/Main";
 
 
 const MainScreen = ({ navigation }) =>{
@@ -10,7 +10,7 @@ const MainScreen = ({ navigation }) =>{
         <View style={styles.container}>
             <Text style={styles.text}>ANGEL</Text>
             <Image
-                source={require('../assets/logo2.png')}
+                source={require('../../assets/logo2.png')}
                 style={ styles.logo }
             />
             <TouchableOpacity style={styles.botao} onPress={()=> navigation.push('Login')}>

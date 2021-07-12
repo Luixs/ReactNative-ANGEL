@@ -18,8 +18,8 @@ const StyleLogin = StyleSheet.create({
         color:"#fff",
         fontSize:12
     },
-    btnSignIn:{
-        width:"80%",
+    btnSignIn: {
+        width:'80%',
         backgroundColor:"#be2534",
         borderRadius:25,
         height:50,
