@@ -8,7 +8,7 @@ import TabStyle from '../styles/TabNav.js';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 //------------------------------SCREENS-------------------------------------
 import LoginScreen from '../Pages/Login/Login.js';
-import Home from '../Pages/HomeInside/Home';
+import Home from '../Pages/HomeInside/Home/Index';
 import CreateAccount from '../Pages/Login/CreateAccount';
 import MainScreen from '../Pages/Initial/Main';
 import PerfilScreen from '../Pages/HomeInside/Perfil';
@@ -69,6 +69,8 @@ const AuthScreen = ()=>(
 const HomeStackScreen = () =>(
   <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={Home}/>
+    <HomeStack.Screen name="Perfil" component={PerfilScreen}/>
+
   </HomeStack.Navigator>
 )
 const SearchStackScreen = () =>(

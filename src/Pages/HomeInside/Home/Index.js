@@ -1,6 +1,10 @@
 import React from "react";
 
-import { View, Text,Button } from "react-native";
+const data = require("../../../assets/data/profileList.json");
+
+const dataT = [{nome: "Luis"},{nome:"Carolina"}]
+
+import { View, Text,Button, FlatList } from "react-native";
 
 const HomeScreen = ({ navigation }) =>{
     return(
@@ -13,6 +17,10 @@ const HomeScreen = ({ navigation }) =>{
             <Button
                 title="Navegar"
                 onPress= {()=> navigation.toggleDrawer()}
+            />
+            <FlatList 
+                data={data}
+                renderItem= {({item}) => <Text>{item.key} {item.User}</Text>}
             />
         </View>
     );
