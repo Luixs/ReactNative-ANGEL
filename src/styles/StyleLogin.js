@@ -11,7 +11,7 @@ const StyleLogin = StyleSheet.create({
         paddingLeft:20,
         marginBottom:15,
         height:50,
-        borderRadius: 25,
+        borderRadius: 5,
         backgroundColor: '#2c405b',
     },
     forgot:{
@@ -21,7 +21,7 @@ const StyleLogin = StyleSheet.create({
     btnSignIn: {
         width:'80%',
         backgroundColor:"#be2534",
-        borderRadius:25,
+        borderRadius:5,
         height:50,
         alignItems:"center",
         justifyContent:"center",

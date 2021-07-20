@@ -2,9 +2,11 @@ import React from "react";
 
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { AuthContext } from "../../App/Context";
+
+//---------STYLES IMPORTS---------------
 import styles from "../../styles/Main";
 import StyleLogin from "../../styles/StyleLogin.js";
-
+//--------------------------------------
 
 const LoginScreen = ({ navigation }) =>{
     const {signIn} = React.useContext(AuthContext);

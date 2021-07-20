@@ -57,10 +57,16 @@ const AuthScreen = ()=>(
       headerStyle:{
         backgroundColor: "#be2534"
       },
-      title: "WELCOME"
+      title: "Welcome"
     }}/>
     <AuthStack.Screen name= "CreateAccount" component={CreateAccount} options={{
-      title: "Create Account"
+      title: "Create Account",
+      headerStyle:{
+        backgroundColor: "#be2534"
+      },
+      headerTitleStyle:{
+        color:"#fff"
+      }
     }}/>
   </AuthStack.Navigator>  
 )
